@@ -1,26 +1,34 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/j4ixJ04e)
-# React Project
+# React + TypeScript + Vite
 
-## Calculator
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### In this project, your task is to create a **Calculator** using React!
+Currently, two official plugins are available:
 
-I have included a folder, "./material", where you can find images of the design we're aiming for, and a style guide to help you achieve it.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+  uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
+  Refresh
 
-Requirements:
+## Expanding the ESLint configuration
 
-- Working basic calculator functionality and logic
-- A final design as close to the images in "./material/design" as you can
-- Use either CSS modules or React inline styling as your method for CSS styling.
-- CSS Grid for the button layout
-- Well thought out component hierarchy
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-Stretch goal (do if you have time):
+- Configure the top-level `parserOptions` property like this:
 
-- Working theme switch that switches between the themes in "./material/design"
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-Remember to use useState and props where necessary. If you get stuck, feel free to ask for help from me or your fellow students.
-
-Like I mentioned during last React lecture, you will have **two** weeks to complete this project.
-
-## Good luck!
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked`
+  or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and
+  add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
