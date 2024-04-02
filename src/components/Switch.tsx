@@ -1,8 +1,8 @@
-import { Theme } from '../helpers/typesAndArrays.ts'
+import { ThemeSettings } from '../helpers/typesAndArrays.ts'
 
 type Props = {
     theme: '1' | '2' | '3'
-    colorTheme: Theme
+    colorTheme: ThemeSettings
     handler: () => void
 }
 

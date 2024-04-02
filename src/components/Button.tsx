@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { ButtonStates, ButtonStyle, symbolMap, Theme } from '../helpers/typesAndArrays.ts'
+import { ButtonStates, ButtonStyle, symbolMap, ThemeSettings } from '../helpers/typesAndArrays.ts'
 
 interface Props {
     sym: string
     handleInput: (inputNumber: string) => void
-    colorTheme: Theme
+    colorTheme: ThemeSettings
 }
 
 export const Button = (props: Props) => {

@@ -1,7 +1,7 @@
 import { Button } from './Button.tsx'
 import { useState } from 'react'
 import { Screen } from './Screen.tsx'
-import { inputMappings, numberArray, Theme } from '../helpers/typesAndArrays.ts'
+import { inputMappings, numberArray, Theme, ThemeSettings } from '../helpers/typesAndArrays.ts'
 import { themes } from '../helpers/theme.ts'
 import Switch from './Switch.tsx'
 
@@ -9,8 +9,8 @@ export const Calculator = () => {
     const [sum, setSum] = useState<string>('')
     const [calculation, setCalculation] = useState<string[]>([])
     const [drawScreen, setDrawScreen] = useState<string[]>([])
-    const [theme, setTheme] = useState<'1' | '2' | '3'>('1')
-    const colorTheme: Theme = themes[`theme${theme}`]
+    const [theme, setTheme] = useState<Theme>(Theme.Theme1)
+    const colorTheme: ThemeSettings = themes[`theme${theme}`]
     const bgColorButtons: string = colorTheme.backgroundColorButtons
     const bgColor: string = colorTheme.backgroundColor
 
@@ -42,9 +42,20 @@ export const Calculator = () => {
     }
 
     const handleThemeCount = (): void => {
-        if (theme === '1') setTheme('2')
-        if (theme === '2') setTheme('3')
-        if (theme === '3') setTheme('1')
+        switch (theme) {
+            case Theme.Theme1:
+                setTheme(Theme.Theme2)
+                break
+            case Theme.Theme2:
+                setTheme(Theme.Theme3)
+                break
+            case Theme.Theme3:
+                setTheme(Theme.Theme1)
+                break
+            default:
+                setTheme(Theme.Theme1)
+                break
+        }
     }
 
     return (

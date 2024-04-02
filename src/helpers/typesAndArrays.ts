@@ -16,7 +16,7 @@ export interface ButtonStyles {
     tertiary: ButtonStates
 }
 
-export interface Theme {
+export interface ThemeSettings {
     backgroundColorScreen: string
     backgroundColorButtons: string
     backgroundColor: string
@@ -25,7 +25,13 @@ export interface Theme {
 }
 
 export interface Themes {
-    [key: string]: Theme
+    [key: string]: ThemeSettings
+}
+
+export enum Theme {
+    Theme1 = '1',
+    Theme2 = '2',
+    Theme3 = '3'
 }
 
 interface Map {

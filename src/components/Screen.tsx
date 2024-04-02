@@ -1,10 +1,10 @@
-import { Theme } from '../helpers/typesAndArrays.ts'
+import { ThemeSettings } from '../helpers/typesAndArrays.ts'
 
 interface Props {
     showScreen: string | number
     borderRadiusTopOrBottom: 'top' | 'bottom'
     liveScreen: boolean
-    colorTheme: Theme
+    colorTheme: ThemeSettings
 }
 
 export const Screen = (props: Props) => {
