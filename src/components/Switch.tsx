@@ -1,21 +1,19 @@
-import { ThemeSettings } from '../helpers/typesAndArrays.ts'
+import { Theme, ThemeSettings } from '../helpers/typesAndArrays.ts'
 
 type Props = {
-    theme: '1' | '2' | '3'
+    theme: Theme
     colorTheme: ThemeSettings
     handler: () => void
 }
 
 const Switch = (props: Props) => {
-    const align = props.theme === '1' ? 'start' : props.theme === '2' ? 'center' : 'end'
+    const align = props.theme === Theme.Theme1 ? 'start' : props.theme === Theme.Theme2 ? 'center' : 'end'
     return (
-        <div style={{ display: 'flex', alignItems: 'end', overflow: 'visible' }}>
+        <div className={'switch-wrapper'}>
             <h1
+                className={'theme-text'}
                 style={{
-                    fontSize: 16,
-                    paddingRight: 5,
-                    color: props.colorTheme.fontColorScreen,
-                    fontWeight: 'lighter'
+                    color: props.colorTheme.fontColorScreen
                 }}
             >
                 THEME
@@ -27,26 +25,16 @@ const Switch = (props: Props) => {
                     <h6 style={{ fontSize: 14, color: props.colorTheme.fontColorScreen }}>3</h6>
                 </div>
                 <div
+                    className={'dot-container'}
                     onClick={props.handler}
                     style={{
-                        position: 'relative',
-                        width: '2rem',
-                        height: '0.6rem',
                         backgroundColor: props.colorTheme.backgroundColorButtons,
-                        borderRadius: '0.35rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '1px',
-                        justifyContent: align,
-                        transition: '0.2s'
+                        justifyContent: align
                     }}
                 >
                     <div
+                        className={'dot'}
                         style={{
-                            transition: '0.9s',
-                            height: '0.5rem',
-                            width: '0.5rem',
-                            borderRadius: '50%',
                             backgroundColor: props.colorTheme.buttonStyle.tertiary.still.backgroundColor
                         }}
                     ></div>

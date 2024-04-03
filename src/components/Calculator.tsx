@@ -66,15 +66,7 @@ export const Calculator = () => {
             }}
         >
             <div className={'calc-wrapper'}>
-                <div
-                    style={{
-                        display: 'flex',
-                        gap: '24vw',
-                        justifyContent: 'space-between',
-                        width: '40vw',
-                        marginBottom: '1rem'
-                    }}
-                >
+                <div className={'top-wrapper'}>
                     <h2 style={{ color: colorTheme.fontColorScreen, overflow: 'visible' }}>calc</h2>
                     <Switch theme={theme} colorTheme={colorTheme} handler={() => handleThemeCount()} />
                 </div>
