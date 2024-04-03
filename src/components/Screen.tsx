@@ -1,10 +1,10 @@
-import { Theme } from '../helpers/typesAndArrays.ts'
+import { ThemeSettings } from '../helpers/typesAndArrays.ts'
 
 interface Props {
     showScreen: string | number
     borderRadiusTopOrBottom: 'top' | 'bottom'
     liveScreen: boolean
-    colorTheme: Theme
+    colorTheme: ThemeSettings
 }
 
 export const Screen = (props: Props) => {
@@ -16,8 +16,8 @@ export const Screen = (props: Props) => {
             <div
                 style={
                     props.borderRadiusTopOrBottom === 'top'
-                        ? { borderRadius: '10px 10px 0 0', backgroundColor: screenColor, color: fontColor }
-                        : { borderRadius: '0 0 10px 10px', backgroundColor: screenColor, color: fontColor }
+                        ? { backgroundColor: screenColor, color: fontColor, borderRadius: '10px 10px 0 0' }
+                        : { backgroundColor: screenColor, color: fontColor, borderRadius: '0 0 10px 10px' }
                 }
                 className={'screen-default'}
             >

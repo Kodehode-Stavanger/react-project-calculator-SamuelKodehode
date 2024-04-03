@@ -90,7 +90,7 @@ export const themes: Themes = {
                     color: 'hsl(60,33%,99%)'
                 },
                 hover: {
-                    backgroundColor: 'hsl(184,43%,37%)',
+                    backgroundColor: 'hsl(185,50%,46%)',
                     boxShadow: '0 5px hsl(186,55%,26%)',
                     color: 'hsl(60,33%,99%)'
                 },
