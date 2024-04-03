@@ -11,8 +11,6 @@ export const Calculator = () => {
     const [drawScreen, setDrawScreen] = useState<string[]>([])
     const [theme, setTheme] = useState<Theme>(Theme.Theme1)
     const colorTheme: ThemeSettings = themes[`theme${theme}`]
-    const bgColorButtons: string = colorTheme.backgroundColorButtons
-    const bgColor: string = colorTheme.backgroundColor
 
     const handleNumberArray = (inputNumber: string): void => {
         const screenInput: string = inputMappings[inputNumber] || inputNumber
@@ -62,7 +60,7 @@ export const Calculator = () => {
         <div
             className={'full-page'}
             style={{
-                backgroundColor: bgColor
+                backgroundColor: colorTheme.backgroundColor
             }}
         >
             <div className={'calc-wrapper'}>
@@ -77,7 +75,7 @@ export const Calculator = () => {
                     borderRadiusTopOrBottom={'bottom'}
                     showScreen={drawScreen.join('')}
                 />
-                <div className={'calculator-default'} style={{ backgroundColor: bgColorButtons }}>
+                <div className={'calculator-default'} style={{ backgroundColor: colorTheme.backgroundColorButtons }}>
                     {numberArray.map((numberInput: string) => {
                         return (
                             <Button
